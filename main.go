@@ -31,12 +31,12 @@ func main() {
 
 	groupAPI := router.Group("/api")
 	{
-		groupTorrent := groupAPI.Group("/torrent")
+		groupTask := groupAPI.Group("/torrent")
 		{
-			groupTorrent.GET("/task", controller.RetriveAllTorrents)
-			groupTorrent.GET("/task/:id", controller.RetriveTorrent)
-			groupTorrent.POST("/task", controller.CreateTorrent)
-			groupTorrent.POST("/task:id", controller.DeleteTorrent)
+			groupTask.GET("/task", controller.RetriveAllTasks)
+			groupTask.GET("/task/:id", controller.RetriveTask)
+			groupTask.POST("/task", controller.CreateTask)
+			groupTask.POST("/task:id", controller.UpdateTask)
 		}
 	}
 
